@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.header-style {
+  background: #121c29;
+}
+
+.red-logo {
+  background: #dc6041;
+}
+
+.lead-text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
