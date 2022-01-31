@@ -2,16 +2,7 @@
 import * as React from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import {
-  ChartBarIcon,
-  CursorClickIcon,
-  DocumentReportIcon,
-  MenuIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  ViewGridIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+import { MenuIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const resources: Array<any> = [
