@@ -51,3 +51,29 @@
   font-weight: 700;
   line-height: 24px;
 }
+
+.dashboard {
+  background: #e5e5e5;
+}
+
+.lead-text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 36px;
+
+  letter-spacing: 0.1px;
+}
+
+.bg-core-yellow {
+  background-color: #fcd57b;
+}
+
+.bg-red-cl {
+  background: #dc6041;
+  color: white;
+}
+
+.border-stuff {
+  border: 1px solid #E2E2EA;
+}

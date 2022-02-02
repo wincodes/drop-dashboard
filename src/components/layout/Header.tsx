@@ -8,26 +8,12 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 const resources: Array<any> = [
   {
     name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
-    href: "#",
   },
   {
     name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
-    href: "#",
   },
   {
     name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
   },
 ];
 
@@ -35,7 +21,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Header() {
   return (
     <Popover className="relative bg-white header-style">
       <div className="flex justify-between items-center px-4 py-4 sm:px-6 md:justify-start md:space-x-10">
