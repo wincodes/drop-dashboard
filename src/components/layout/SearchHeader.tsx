@@ -1,10 +1,35 @@
-/* This example requires Tailwind CSS v2.0+ */
 import * as React from "react";
-// import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon } from "@heroicons/react/outline";
+import { Fragment, useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
 
-export default function SearchHeader() {
+export default () => {
+  const [menuItems, setMenuItems] = useState([
+    "Brand: Liba",
+    "Brand: PowerLix",
+    "Brand: Printer's Jack",
+    "Brand:Bilami",
+    "Brand:Mckay",
+    "Brand: Ucc",
+    "Brand: Vondior",
+    "Brand: Signature",
+    "Brand: PowerBear",
+  ]);
+  const [rowItems, setRowItems] = useState([
+    "Brand: Liba",
+    "Product Type: shower curtain",
+  ]);
+  const [columns, setColumns] = useState([]);
+
+  const removeAny = (item: string, target: string): void => {
+    target === "col"
+      ? setColumns(columns.filter((el) => el !== item))
+      : setRowItems(rowItems.filter((el) => el !== item));
+  };
+
+  const addMenuItem = (item: string): void => {
+    setColumns([...columns, item]);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-11 gap-4 my-6 items-center">
       <div className="col-span-1 flex justify-center content-center py-2 px-4 bg-core-yellow rounded-md font-semibold h-10">
@@ -75,11 +100,101 @@ export default function SearchHeader() {
                 />
               </svg>
             </div>
+            <Menu as="div" className="relative inline-block text-left mx-2">
+              <div>
+                <Menu.Button className="inline-flex items-center justify-center w-full bg-white text-black">
+                  Brand{" "}
+                  <span className="px-1">
+                    <svg
+                      width="1"
+                      height="15"
+                      viewBox="0 0 1 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line
+                        x1="0.1"
+                        y1="5.14252e-09"
+                        x2="0.0999992"
+                        y2="15"
+                        stroke="#1A1C1D"
+                        stroke-width="0.2"
+                      />
+                    </svg>
+                  </span>
+                </Menu.Button>
+              </div>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="origin-top-left absolute left-0 mt-2 w-48 text-black rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="py-3 px-2">
+                    {menuItems.map((item) => (
+                      <Menu.Item>
+                        {() => (
+                          <button className="flex items-center lil-btn text-left px-2 my-1 text-sm">
+                            <div>{item}</div>
+                            <button
+                              className="pl-2"
+                              onClick={() => addMenuItem(item)}
+                            >
+                              <svg
+                                width="10"
+                                height="10"
+                                viewBox="0 0 10 10"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4.9535 0.223352C4.81306 0.223194 4.67833 0.278912 4.57903 0.378213C4.47973 0.477515 4.42401 0.612243 4.42417 0.752677L4.42042 4.42041L0.748932 4.42041C0.608498 4.42025 0.473771 4.47597 0.374469 4.57527C0.275167 4.67457 0.21945 4.8093 0.219608 4.94973C0.219608 5.24255 0.456115 5.47906 0.748933 5.47906L4.42042 5.47906L4.42042 9.15054C4.42042 9.44336 4.65693 9.67987 4.94974 9.67987C5.24256 9.67987 5.47907 9.44336 5.47907 9.15054L5.47907 5.47906L9.15055 5.47906C9.44337 5.47906 9.67988 5.24255 9.67988 4.94973C9.67988 4.65692 9.44337 4.42041 9.15055 4.42041L5.47907 4.42041V0.748923C5.47907 0.463613 5.23881 0.223353 4.9535 0.223352Z"
+                                  fill="#1A1C1D"
+                                />
+                              </svg>
+                            </button>
+                          </button>
+                        )}
+                      </Menu.Item>
+                    ))}
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
+            <div className="flex items-center justify-start text-black font-bold overflow-hidden">
+              {columns.map((item) => (
+                <button className="flex items-center lil-btn text-left px-2 mx-1 my-1 text-sm min-w-fit">
+                  <div>{item}</div>
+                  <button
+                    className="pl-2"
+                    onClick={() => removeAny(item, "col")}
+                  >
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.20001 0.806668C9.07546 0.681833 8.90635 0.611678 8.73001 0.611678C8.55366 0.611678 8.38456 0.681833 8.26001 0.806668L5.00001 4.06L1.74001 0.800001C1.61546 0.675166 1.44636 0.605011 1.27001 0.605011C1.09367 0.605011 0.924565 0.675166 0.800011 0.800001C0.540011 1.06 0.540011 1.48 0.800011 1.74L4.06001 5L0.800011 8.26C0.540011 8.52 0.540011 8.94 0.800011 9.2C1.06001 9.46 1.48001 9.46 1.74001 9.2L5.00001 5.94L8.26001 9.2C8.52001 9.46 8.94001 9.46 9.20001 9.2C9.46001 8.94 9.46001 8.52 9.20001 8.26L5.94001 5L9.20001 1.74C9.45334 1.48667 9.45334 1.06 9.20001 0.806668Z"
+                        fill="#1A1C1D"
+                      />
+                    </svg>
+                  </button>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-md h-10 col-span-4 border-stuff">
+      <div className="bg-white rounded-md h-10 col-span-4 border-stuff overflow-hidden">
         <div className="flex justify-start items-center content-center py-2 px-2">
           <div className="flex justify-between items-center content-center text-gray-400 font-medium">
             <div className="px-2">
@@ -128,6 +243,30 @@ export default function SearchHeader() {
                 />
               </svg>
             </div>
+            <div className="flex items-center justify-start text-black font-bold overflow-hidden">
+              {rowItems.map((item) => (
+                <button className="flex items-center lil-btn text-left px-2 mx-1 my-1 text-sm min-w-fit">
+                  <div>{item}</div>
+                  <button
+                    className="pl-2"
+                    onClick={() => removeAny(item, "row")}
+                  >
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.20001 0.806668C9.07546 0.681833 8.90635 0.611678 8.73001 0.611678C8.55366 0.611678 8.38456 0.681833 8.26001 0.806668L5.00001 4.06L1.74001 0.800001C1.61546 0.675166 1.44636 0.605011 1.27001 0.605011C1.09367 0.605011 0.924565 0.675166 0.800011 0.800001C0.540011 1.06 0.540011 1.48 0.800011 1.74L4.06001 5L0.800011 8.26C0.540011 8.52 0.540011 8.94 0.800011 9.2C1.06001 9.46 1.48001 9.46 1.74001 9.2L5.00001 5.94L8.26001 9.2C8.52001 9.46 8.94001 9.46 9.20001 9.2C9.46001 8.94 9.46001 8.52 9.20001 8.26L5.94001 5L9.20001 1.74C9.45334 1.48667 9.45334 1.06 9.20001 0.806668Z"
+                        fill="#1A1C1D"
+                      />
+                    </svg>
+                  </button>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -149,8 +288,10 @@ export default function SearchHeader() {
           </svg>
         </div>
 
-        <div className="bg-red-cl font-medium py-2 px-12 rounded-md">Export</div>
+        <div className="bg-red-cl font-medium py-2 px-12 rounded-md">
+          Export
+        </div>
       </div>
     </div>
   );
-}
+};

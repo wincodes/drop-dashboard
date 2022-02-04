@@ -75,5 +75,14 @@
 }
 
 .border-stuff {
-  border: 1px solid #E2E2EA;
+  border: 1px solid #e2e2ea;
+}
+
+.lil-btn {
+  background: #fcd57b;
+  border-radius: 30px;
+}
+
+.hide-overflow {
+  overflow: hidden;
 }
