@@ -20,7 +20,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header() {
+export default () => {
   return (
     <Popover className="relative bg-white header-style">
       <div className="flex justify-between items-center px-4 py-4 sm:px-6 md:justify-start md:space-x-10">

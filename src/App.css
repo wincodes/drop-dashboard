@@ -86,3 +86,8 @@
 .hide-overflow {
   overflow: hidden;
 }
+
+.rounded-default {
+  border: 1px solid #e2e2ea;
+  border-radius: 20px;
+}
