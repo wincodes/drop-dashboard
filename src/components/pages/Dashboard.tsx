@@ -2,31 +2,13 @@ import * as React from "react";
 import { useState } from "react";
 import * as moment from "moment";
 import SearchHeader from "../layout/SearchHeader";
-import "chart.js/auto";
-import { Chart } from "react-chartjs-2";
+import Samples from "./Samples";
+import SvgList from "../../SvgList";
+import * as HTML5Backend from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import Charts from "./Charts";
 
 export default () => {
-  const [chartData, setChartData] = useState({
-    labels: ["1 Oct", "8 Oct", "15 Oct", "20 Oct", "24 Oct", "28 Oct"],
-    datasets: [
-      {
-        id: 1,
-        label: "",
-        data: [900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400, 1600],
-        backgroundColor: "#DC6041",
-        borderWidth: 3,
-        borderColor: "#DC6041",
-      },
-      {
-        id: 2,
-        label: "",
-        data: [1400, 1100, 700, 700, 1400, 1450],
-        backgroundColor: "#121C29",
-        borderWidth: 3,
-        borderColor: "#121C29"
-      },
-    ],
-  });
   return (
     <div className="dashboard h-max py-6 px-6">
       <div className="text-left lead-text py-4">
@@ -35,18 +17,20 @@ export default () => {
 
       <SearchHeader />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-">
-        <div className="bg-white overflow-hidden rounded-default col-span-3">
-          <div className="px-4 py-5 sm:p-6">
-            <Chart type="line" data={chartData} />
+      <DndProvider backend={HTML5Backend as any}>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-">
+          <div className="bg-white overflow-hidden rounded-default col-span-3">
+            <Charts />
           </div>
-        </div>
-        <div>
-          <div className="bg-white overflow-hidden rounded-default mx-10 my-4">
-            <div className="px-4 py-5 sm:p-6">
-              <h4 className="font-bold text-left">Visualization</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-                <div className="col-span-1 py-3">
+          <div>
+            <div className="bg-white overflow-hidden rounded-default mx-10 my-4">
+              <div className="px-4 py-5 sm:p-6">
+                <h4 className="font-bold text-left">Visualization</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+                  {SvgList.map((svg) => (
+                    <Samples svg={svg} />
+                  ))}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -71,8 +55,8 @@ export default () => {
                       stroke-width="2"
                     />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -90,8 +74,8 @@ export default () => {
                       stroke="#E2E2EA"
                     />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -126,8 +110,8 @@ export default () => {
                       stroke-width="13"
                     />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -168,8 +152,8 @@ export default () => {
                       stroke-width="30"
                     />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -208,8 +192,8 @@ export default () => {
                     <path d="M17.5 17L17.5 72" stroke="#8F92A1" />
                     <line x1="72" y1="72" x2="17" y2="72" stroke="#8F92A1" />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -234,8 +218,8 @@ export default () => {
                       stroke-width="2"
                     />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -256,8 +240,8 @@ export default () => {
                     <circle cx="59" cy="33" r="2" fill="#DC6041" />
                     <circle cx="65" cy="22" r="2" fill="#DC6041" />
                   </svg>
-                </div>
-                <div className="col-span-1 py-3">
+                </div> */}
+                  {/* <div className="col-span-1 py-3">
                   <svg
                     width="89"
                     height="89"
@@ -280,17 +264,18 @@ export default () => {
                       stroke="#BB5935"
                     />
                   </svg>
+                </div> */}
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex items-center justify-center py-4">
-            <button className="bg-red-cl font-bold py-2 px-8 rounded-md">
-              Finish and Save
-            </button>
+            <div className="flex items-center justify-center py-4">
+              <button className="bg-red-cl font-bold py-2 px-8 rounded-md">
+                Finish and Save
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </DndProvider>
     </div>
   );
 };
