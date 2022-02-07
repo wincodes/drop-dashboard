@@ -39,6 +39,7 @@ const Charts = () => {
         ],
         backgroundColor: backgroundColor1,
         borderWidth: 3,
+        pointRadius: 0,
         borderColor: backgroundColor1,
       },
       {
@@ -48,9 +49,22 @@ const Charts = () => {
         data: [1400, 1100, 700, 700, 1400, 1450],
         backgroundColor: backgroundColor2,
         borderWidth: 3,
+        pointRadius: 0,
         borderColor: backgroundColor2,
       },
     ],
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      tooltip: {
+        legend: {
+          display: false,
+        },
+      }
+    },
   } as any);
   return (
     <div className="px-4 py-5 sm:p-6" ref={ref}>

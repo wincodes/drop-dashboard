@@ -34,10 +34,8 @@ export default [
           id: 1,
           label: "",
           type: "line",
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          data: [900, 1100, 100, 1400, 1800, 1550],
+          pointRadius: 0,
           backgroundColor: "#EEAC4B",
           borderWidth: 3,
           borderColor: "#EEAC4B",
@@ -47,6 +45,7 @@ export default [
           label: "",
           type: "line",
           data: [1400, 1100, 700, 700, 1400, 1450],
+          pointRadius: 0,
           backgroundColor: "#BB5935",
           borderWidth: 3,
           borderColor: "#BB5935",
@@ -83,10 +82,7 @@ export default [
           id: 1,
           label: "",
           type: "bar",
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          data: [900, 1100, 100, 1400, 1800, 1550],
           hoverOffset: 4,
           backgroundColor: "#EEAC4B",
           borderWidth: 3,
@@ -227,10 +223,7 @@ xmlns="http://www.w3.org/2000/svg"
           id: 1,
           label: "",
           type: "pie",
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          data: [900, 1100, 100, 1400, 1800, 1550],
           hoverOffset: 4,
           backgroundColor: [900, 1100, 100, 1400, 1800, 1550].map((item, i) => {
             return i % 2 === 0 ? "#EEAC4B" : "#BB5935";
@@ -302,11 +295,8 @@ xmlns="http://www.w3.org/2000/svg"
           id: 1,
           label: "",
           type: "bar",
-          indexAxis: 'y',
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          indexAxis: "y",
+          data: [900, 1100, 100, 1400, 1800, 1550],
           backgroundColor: "#EEAC4B",
           borderWidth: 3,
           borderColor: "#EEAC4B",
@@ -315,7 +305,7 @@ xmlns="http://www.w3.org/2000/svg"
           id: 2,
           label: "",
           type: "bar",
-          indexAxis: 'y',
+          indexAxis: "y",
           data: [1400, 1100, 700, 700, 1400, 1450],
           backgroundColor: "#BB5935",
           borderWidth: 3,
@@ -360,10 +350,10 @@ xmlns="http://www.w3.org/2000/svg"
           id: 1,
           label: "",
           type: "line",
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          data: [900, 1100, 100, 1400, 1800, 1550],
+          pointRadius: 0,
+          lineTension: 0.4,
+          radius: 6,
           backgroundColor: "#EEAC4B",
           borderWidth: 3,
           borderColor: "#EEAC4B",
@@ -373,6 +363,9 @@ xmlns="http://www.w3.org/2000/svg"
           label: "",
           type: "line",
           data: [1400, 1100, 700, 700, 1400, 1450],
+          pointRadius: 0,
+          lineTension: 0.4,
+          radius: 6,
           backgroundColor: "#BB5935",
           borderWidth: 3,
           borderColor: "#BB5935",
@@ -404,42 +397,31 @@ xmlns="http://www.w3.org/2000/svg"
 
     backgroundColor1: "#EEAC4B",
     backgroundColor2: "#BB5935",
-    chart: "scatter",
+    chart: "line",
     data: {
       labels: ["1 Oct", "8 Oct", "15 Oct", "20 Oct", "24 Oct", "28 Oct"],
       datasets: [
         {
           id: 1,
           label: "",
-          type: "scatter",
-          position: 'bottom',
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          type: "line",
+          position: "bottom",
+          data: [900, 1100, 100, 1400, 1800, 1550],
           backgroundColor: "#EEAC4B",
-          borderWidth: 3,
-          borderColor: "#EEAC4B",
+          borderWidth: 0,
+          borderColor: "#fff",
         },
         {
           id: 2,
           label: "",
-          type: "scatter",
-          position: 'bottom',
+          type: "line",
+          position: "bottom",
           data: [1400, 1100, 700, 700, 1400, 1450],
           backgroundColor: "#BB5935",
-          borderWidth: 3,
-          borderColor: "#BB5935",
+          borderWidth: 0,
+          borderColor: "#fff",
         },
       ],
-      options: {
-        scales: {
-          x: {
-            type: 'linear',
-            position: 'bottom'
-          }
-        }
-      }
     },
   },
   {
@@ -476,10 +458,8 @@ xmlns="http://www.w3.org/2000/svg"
           id: 1,
           label: "",
           type: "line",
-          data: [
-            900, 1100, 100, 1400, 1800, 1550, 1800, 2300, 2050, 1400, 1400,
-            1600,
-          ],
+          data: [900, 1100, 100, 1400, 1800, 1550],
+          pointRadius: 0,
           backgroundColor: "#EEAC4B",
           borderWidth: 3,
           borderColor: "#EEAC4B",
@@ -489,6 +469,7 @@ xmlns="http://www.w3.org/2000/svg"
           label: "",
           type: "bar",
           data: [1400, 1100, 700, 700, 1400, 1450],
+          pointRadius: 0,
           backgroundColor: "#BB5935",
           borderWidth: 3,
           borderColor: "#BB5935",
