@@ -8,6 +8,7 @@ interface _dt {
   backgroundColor1: string;
   backgroundColor2: string;
   data: object;
+  options: object;
 }
 
 interface obj {
@@ -15,12 +16,19 @@ interface obj {
 }
 
 export default ({
-  svgL: { svg, chart, backgroundColor1, backgroundColor2 , data},
+  svgL: { svg, chart, backgroundColor1, backgroundColor2, data, options },
 }: obj) => {
   const ref = useRef(null);
   const [{ isDragging }, drag] = useDrag({
     type: "div",
-    item: { type: "div", chart, backgroundColor1, backgroundColor2, data },
+    item: {
+      type: "div",
+      chart,
+      backgroundColor1,
+      backgroundColor2,
+      data,
+      options,
+    },
     collect: (monitor: any) => ({
       isDragging: monitor.isDragging(),
     }),

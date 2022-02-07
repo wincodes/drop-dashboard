@@ -51,7 +51,40 @@ export default [
           borderColor: "#BB5935",
         },
       ],
-      options: {},
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
   {
@@ -98,7 +131,40 @@ export default [
           borderColor: "#BB5935",
         },
       ],
-      options: {},
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
   {
@@ -156,19 +222,41 @@ export default [
             return i % 2 === 0 ? "#EEAC4B" : "#BB5935";
           }),
         },
-        // {
-        //   id: 2,
-        //   label: "",
-        //   data: [1400, 1100, 700, 700, 1400, 1450],
-        //   hoverOffset: 4,
-        //   backgroundColor: [900, 1100, 100, 1400, 1800, 1550].map((item, i) => {
-        //     return i % 2 === 0 ? "#BB5935" : "#EEAC4B";
-        //   }),
-        //   borderColor: [900, 1100, 100, 1400, 1800, 1550].map((item, i) => {
-        //     return i % 2 === 0 ? "#BB5935" : "#EEAC4B";
-        //   }),
-        // },
       ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
   {
@@ -232,17 +320,41 @@ xmlns="http://www.w3.org/2000/svg"
             return i % 2 === 0 ? "#EEAC4B" : "#BB5935";
           }),
         },
-        // {
-        //   id: 2,
-        //   label: "",
-        //   type: "pie",
-        //   data: [1400, 1100, 700, 700, 1400, 1450],
-        //   hoverOffset: 4,
-        //   backgroundColor: "#BB5935",
-        //   borderWidth: 3,
-        //   borderColor: "#BB5935",
-        // },
       ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
   {
@@ -313,6 +425,41 @@ xmlns="http://www.w3.org/2000/svg"
         },
       ],
     },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      indexAxis: "y",
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
+    },
   },
   {
     svg: `<svg
@@ -372,6 +519,40 @@ xmlns="http://www.w3.org/2000/svg"
         },
       ],
     },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
+    },
   },
   {
     svg: `<svg
@@ -422,6 +603,40 @@ xmlns="http://www.w3.org/2000/svg"
           borderColor: "#fff",
         },
       ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
   {
@@ -475,6 +690,40 @@ xmlns="http://www.w3.org/2000/svg"
           borderColor: "#BB5935",
         },
       ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#8F92A1",
+          },
+        },
+
+        y: {
+          display: true,
+          grid: {
+            display: true,
+            zeroLineColor: "transparent",
+            drawBorder: false,
+            borderDash: [3, 3],
+          },
+          ticks: {
+            color: "#8F92A1",
+            callback: function (value: string) {
+              return value;
+            },
+          },
+        },
+      },
     },
   },
 ];

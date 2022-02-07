@@ -270,7 +270,7 @@ export default () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between col-span-2">
+      <div className="flex items-center justify-end col-span-2">
         <div className="bg-red-cl px-4 py-2 mx-4 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -17,11 +17,14 @@ const Charts = () => {
   const [, drop] = useDrop({
     accept: "div",
     drop(details: any) {
+      const { data, options, backgroundColor1, backgroundColor2, chart } =
+        details;
       setShowing(false);
-      setChartData(details.data);
-      setBackgroundColor1(details.backgroundColor1);
-      setBackgroundColor2(details.backgroundColor2);
-      setType(details.chart);
+      setChartData(data);
+      setOptions(options);
+      setBackgroundColor1(backgroundColor1);
+      setBackgroundColor2(backgroundColor2);
+      setType(chart);
       setShowing(true);
     },
   });
@@ -53,36 +56,63 @@ const Charts = () => {
         borderColor: backgroundColor2,
       },
     ],
-    options: {
-      plugins: {
-        legend: {
+  } as any);
+  const [options, setOptions] = useState<any>({
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        display: true,
+        grid: {
           display: false,
+        },
+        ticks: {
+          color: "#8F92A1",
         },
       },
-      tooltip: {
-        legend: {
-          display: false,
+
+      y: {
+        display: true,
+        grid: {
+          display: true,
+          zeroLineColor: "transparent",
+          drawBorder: false,
+          borderDash: [3, 3],
         },
-      }
+        ticks: {
+          color: "#8F92A1",
+          callback: function (value: string) {
+            return value;
+          },
+        },
+      },
     },
-  } as any);
+  });
+
   return (
-    <div className="px-4 py-5 sm:p-6" ref={ref}>
-      {showing && <Chart type={type as any} data={chartData as any} />}
-      <div className="py-8 flex items-center text-gray-400 font-semibold text-sm">
-        <div className="flex items-center">
-          <span
-            className="indicator"
-            style={{ backgroundColor: backgroundColor1 }}
-          ></span>
-          <span className="px-3"> YTD (2021) </span>
-        </div>
-        <div className="flex items-center px-10">
-          <span
-            className="indicator"
-            style={{ backgroundColor: backgroundColor2 }}
-          ></span>
-          <span className="px-3"> Last Year (2020) </span>
+    <div className="px-4 py-5 sm:p-6 rounded-default" ref={ref}>
+      <div className="rounded-default px-10 py-10 mx-6 my-6">
+        {showing && (
+          <Chart type={type as any} options={options} data={chartData as any} />
+        )}
+        <div className="py-8 flex items-center text-gray-400 font-semibold text-sm">
+          <div className="flex items-center">
+            <span
+              className="indicator"
+              style={{ backgroundColor: backgroundColor1 }}
+            ></span>
+            <span className="px-3"> YTD (2021) </span>
+          </div>
+          <div className="flex items-center px-10">
+            <span
+              className="indicator"
+              style={{ backgroundColor: backgroundColor2 }}
+            ></span>
+            <span className="px-3"> Last Year (2020) </span>
+          </div>
         </div>
       </div>
     </div>
